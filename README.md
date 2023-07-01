@@ -13,7 +13,7 @@ git clone https://github.com/yandex-praktikum/api_final_yatube.git
 cd api_final_yatube
 ```
 
-Cоздать,активировать и обновить виртуальное окружение:
+Cоздать, активировать и обновить виртуальное окружение:
 
 ```
 python -m venv env
@@ -38,6 +38,10 @@ python manage.py migrate
 Запустить проект:
 
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
-
+## Примеры работы с API
+Документация проекта для детального ознакомления с его возможностями здесь:
+```
+http://127.0.0.1:8000/redoc/
+```

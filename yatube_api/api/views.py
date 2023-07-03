@@ -46,7 +46,6 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GroupSerializer
 
 
-# class FollowViewSet(viewsets.ModelViewSet):
 class FollowViewSet(mixins.ListModelMixin,
                     mixins.CreateModelMixin,
                     viewsets.GenericViewSet):
@@ -56,7 +55,7 @@ class FollowViewSet(mixins.ListModelMixin,
     search_fields = ('=following__username',)
 
     def get_queryset(self):
-        return User.objects.get(username=self.request.user).follower.all()
+        return self.request.user.follower.all()
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
